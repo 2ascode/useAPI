@@ -6,6 +6,7 @@
   position: relative;
   z-index: 5;
   color: #000;
+  font-family: system-ui;
 }
 
 a {
@@ -26,14 +27,33 @@ button {
   padding: 15px 25px;
 }
 
-button:hover {
+.button {
+  cursor: default;
+  background-color: silver;
+  color: rgb(104, 102, 99);
+  border-radius: 8px;
+  border: none;
+  padding: 15px 25px;
+}
+
+.button:hover{
+  transform: none !important;
+  background-color: silver !important;
+  box-shadow: none !important;
+}
+
+.start:hover, .next:hover, .end:hover, .previous:hover {
+  transform: scale(1.2);
   background-color: rgb(28, 28, 71);
   box-shadow: 0px 0px 15px 0px rgb(32, 32, 129);
 }
 
+
+
 .container {
-  width: 1044px;
-  margin: 0 auto;
+  max-width: 1044px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 10px 15px;
 }
 
@@ -81,13 +101,47 @@ button:hover {
 }
 
 .main_bottom {
+  margin-top: 30px;
+  margin-bottom: 15px;
     padding-right: 50px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
+.main_bottom p {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: silver;
+  line-height: 40px;
+  font-size: 20px;
+  color: rgb(61, 61, 98);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.main_bottom p:hover{
+  transform: scale(1.2);
+  box-shadow: 0px 0px 10px 0px black;
+}
+
+.actu_page{
+  width: 60px !important;
+  height: 60px !important;
+  background-color: rgb(92, 92, 184) !important;
+  color: beige !important;
+  line-height: 60px !important;
+  font-size: 25px !important;
+}
+
+
 .profil_block {
+  width: 100%;
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
@@ -102,9 +156,15 @@ button:hover {
   background-color: #fff;
 }
 
-.profil_item:hover{
+.profil_item:hover, .active{
   transform: scale(1.2);
   box-shadow: 0px 15px 25px 0px rgb(151, 130, 105);
+}
+
+.active{
+  background-color: rgb(242, 242, 213);
+  transform: scale(1.2);
+  box-shadow: 15px 15px 30px 0px rgb(151, 130, 105);
 }
 
 .profil_top {
@@ -143,4 +203,66 @@ button:hover {
 
 .profil_text {
   margin: 10px 0;
+}
+
+
+@media (max-width: 1000px){
+
+  .profil_block {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+button{
+  padding: 10px 15px;
+}
+}
+
+
+@media (max-width: 750px){
+
+  .profil_block {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.main_bottom{
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, fr);
+  gap: 20px;
+}
+
+}
+
+@media (max-width: 510px){
+
+  .profil_block {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+button{
+  padding: 18px 12px;
+}
+
+.main_bottom p {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.actu_page{
+   width: 50px !important;
+  height: 50px !important;
+  line-height: 50px !important;
+}
 }
