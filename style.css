@@ -51,8 +51,9 @@ button {
 
 
 .container {
-  width: 1044px;
-  margin: 0 auto;
+  max-width: 1044px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 10px 15px;
 }
 
@@ -140,6 +141,7 @@ button {
 .profil_block {
   width: 100%;
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
@@ -201,4 +203,66 @@ button {
 
 .profil_text {
   margin: 10px 0;
+}
+
+
+@media (max-width: 1000px){
+
+  .profil_block {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+button{
+  padding: 10px 15px;
+}
+}
+
+
+@media (max-width: 750px){
+
+  .profil_block {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.main_bottom{
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, fr);
+  gap: 20px;
+}
+
+}
+
+@media (max-width: 510px){
+
+  .profil_block {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+button{
+  padding: 18px 12px;
+}
+
+.main_bottom p {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.actu_page{
+   width: 50px !important;
+  height: 50px !important;
+  line-height: 50px !important;
+}
 }
